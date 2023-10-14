@@ -12,6 +12,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            // FormItemSeeder::class,
+            CreateAdminUserSeeder::class,
+            PermissionSeeder::class,
+            FormSeeder::class,
+            // UserRolePermissionSeeder::class,
+            // UserSeeder::class,
+        ]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
