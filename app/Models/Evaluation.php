@@ -12,6 +12,6 @@ class Evaluation extends Model
 
     public function section(): BelongsTo
     {
-        return $this->belongsTo(EvaluationSection::class);
+        return $this->belongsTo(Section::class);
     }
 }

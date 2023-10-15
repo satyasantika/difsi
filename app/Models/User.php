@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function sections(): HasMany
     {
-        return $this->hasMany(EvaluationSection::class);
+        return $this->hasMany(Section::class);
     }
 
 

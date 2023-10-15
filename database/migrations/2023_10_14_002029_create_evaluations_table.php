@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('evaluation_section_id')->constrained();
+            $table->foreignId('section_id')->constrained();
             $table->string('participant_name'); //siswa
             $table->string('class');
             $table->integer('section_order');
-            $table->longText('item_order')->nullable(); //random or standar item
+            $table->datetime('time_start')->nullable(); //mulai mengerjakan
+            $table->datetime('time_stop')->nullable(); //selesai mengerjakan
+            $table->longText('item_list_order')->nullable(); //random or standar item
             $table->integer('score01')->nullable();
             $table->integer('score02')->nullable();
             $table->integer('score03')->nullable();
@@ -69,6 +71,7 @@ return new class extends Migration
             $table->integer('score49')->nullable();
             $table->integer('score50')->nullable();
             $table->integer('total')->nullable();
+            $table->boolean('available')->default(1);
             $table->timestamps();
         });
     }
