@@ -19,6 +19,11 @@ class Section extends Model
         return $this->hasMany(Evaluation::class);
     }
 
+    public function form(): BelongsTo
+    {
+        return $this->belongsTo(Form::class);
+    }
+
     public function teacher(): BelongsTo
     {
         return $this->belongsTo(User::class);

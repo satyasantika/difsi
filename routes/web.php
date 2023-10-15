@@ -21,6 +21,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/password/change', [App\Http\Controllers\Auth\PasswordChangeController::class, 'showChangePasswordGet'])->name('change-password');
     Route::post('/password/change', [App\Http\Controllers\Auth\PasswordChangeController::class, 'changePasswordPost'])->name('update-password');
     Route::post('/password/reset/{id}', [App\Http\Controllers\Auth\PasswordChangeController::class, 'resetPasswordPost'])->name('reset-password');
+    Route::post('/test/resume/{id}', [App\Http\Controllers\Diagnostic\ResumeController::class, 'resume'])->name('test.resume');
+
+    Route::resources([
+        'testsections' => App\Http\Controllers\Diagnostic\SectionController::class,
+        // 'testevaluations' => App\Http\Controllers\EvaluationController::class,
+    ]);
 });
 
 

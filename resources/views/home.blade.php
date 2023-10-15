@@ -15,6 +15,9 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    @can('read diagnostic/testsections')
+                    <a href="{{ route('testsections.index') }}" class="btn btn-primary">Lihat Pengukuran</a>
+                    @endcan
                 </div>
             </div>
         </div>

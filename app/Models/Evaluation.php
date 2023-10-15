@@ -9,6 +9,10 @@ class Evaluation extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    protected $casts = [
+        'time_start' => 'datetime',
+        'time_stop' => 'datetime',
+    ];
 
     public function section(): BelongsTo
     {
